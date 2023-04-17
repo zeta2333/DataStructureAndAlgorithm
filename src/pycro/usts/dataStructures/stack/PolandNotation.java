@@ -13,9 +13,11 @@ import java.util.Stack;
 public class PolandNotation {
     public static void main(String[] args) {
         //先定义一个逆波兰表达式
-        //(3+4)*5-6 => 3 4 + 5 * 6 -
+        //(30+4)*5-6 => 3 4 + 5 * 6 -
+        // 4 * 5 - 8 + 60 + 8 / 2 => 4 5 * 8 - 6 + 8 - 60 + 8 2 / +
         //为了方便，逆波兰表达式的数字和符号使用空格隔开
-        String suffixExpression = " 3 4 + 5 * 6 - ";
+        String suffixExpression = " 30 4 + 5 * 6 - ";
+        suffixExpression = "4 5 * 8 - 60 + 8 2 / +";
         //思路：
         //1.先将“3 4 + 5 * 6 -”放入ArrayList中
         //2.将ArrayList传递给一个方法，配合栈完成计算
