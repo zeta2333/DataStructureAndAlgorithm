@@ -7,7 +7,7 @@ package pycro.usts.dataStructures.recursion;
  */
 public class EightEmpresses {
     //定义一个max表示共有多少个皇后
-    int NUM = 14;
+    int NUM = 8;
     //定义数组array，保存皇后放置位置的结果，比如arr = {0,4,7,...}
     int[] array = new int[NUM];
     //定义一个变量，用于计算次数
