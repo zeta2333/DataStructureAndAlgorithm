@@ -1,5 +1,7 @@
 package pycro.usts.dataStructures.recursion;
 
+import java.util.Arrays;
+
 /**
  * @author Pycro
  * @version 1.0
@@ -27,6 +29,7 @@ public class EightEmpresses {
     private void check(int n) {
         if (n == NUM) {//n=8,其实8个皇后已经放好了
             print();
+            System.out.println(Arrays.toString(array));
             return;
         }
         //按位置依次放入并判断是否冲突

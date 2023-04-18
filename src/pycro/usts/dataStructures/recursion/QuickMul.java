@@ -1,5 +1,7 @@
 package pycro.usts.dataStructures.recursion;
 
+import java.util.function.BiFunction;
+
 /**
  * @author Pycro
  * @version 1.0
@@ -7,9 +9,17 @@ package pycro.usts.dataStructures.recursion;
  */
 public class QuickMul {
     public static void main(String[] args) {
-        System.out.println(commonMul(2, 10));
-        System.out.println(quickMulByRecurse(2, 10));
-        System.out.println(quickMulByIterate(2, 10));
+        MulWithTime(1234567890.0, 987654321000L, QuickMul::commonMul);
+        MulWithTime(123456789.0, 987654321L, QuickMul::quickMulByRecurse);
+        MulWithTime(123456789.0, 987654321L, QuickMul::quickMulByIterate);
+    }
+
+    public static void MulWithTime(double x, long n, BiFunction<Double, Long, Double> mulMethod) {
+        long start = System.currentTimeMillis();
+        Double apply = mulMethod.apply(x, n);
+        System.out.println("计算结果为" + apply);
+        long end = System.currentTimeMillis();
+        System.out.println("耗时" + (double) (end - start) / 1000 + "秒");
     }
 
     //普通乘法
