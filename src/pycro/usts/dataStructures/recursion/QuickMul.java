@@ -9,7 +9,7 @@ import java.util.function.BiFunction;
  */
 public class QuickMul {
     public static void main(String[] args) {
-        MulWithTime(1234567890.0, 987654321000L, QuickMul::commonMul);
+        MulWithTime(123456789.0, 987654321L, QuickMul::commonMul);
         MulWithTime(123456789.0, 987654321L, QuickMul::quickMulByRecurse);
         MulWithTime(123456789.0, 987654321L, QuickMul::quickMulByIterate);
     }

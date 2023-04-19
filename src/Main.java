@@ -6,8 +6,14 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-        int a = (int) '1';
-        System.out.println(a);
+        int n = 100;
+        int sum1 = 0;
+        for (int i = 0; i < n; i++) {
+            sum1 += i + 1;
+        }
+        System.out.println(sum1);
+        int sum = (1 + n) * n >> 1;
+        System.out.println(sum);
     }
 
     //计算
@@ -40,17 +46,18 @@ public class Main {
     }
 }
 
-class   MergeSort {
+class MergeSort {
     public static void main(String[] args) {
-        int[] arr = {1,0};
+        int[] arr = {1, 0};
         mergeSort(arr, 0, arr.length - 1);
         System.out.println(Arrays.toString(arr)); // 输出：[3, 4, 5, 6, 8]
     }
 
     /**
      * 归并排序
-     * @param arr 待排序数组
-     * @param left 左边界
+     *
+     * @param arr   待排序数组
+     * @param left  左边界
      * @param right 右边界
      */
     public static void mergeSort(int[] arr, int left, int right) {
@@ -65,9 +72,10 @@ class   MergeSort {
 
     /**
      * 合并两个已排序的子数组
-     * @param arr 待排序数组
-     * @param left 左边界
-     * @param mid 中间位置
+     *
+     * @param arr   待排序数组
+     * @param left  左边界
+     * @param mid   中间位置
      * @param right 右边界
      */
     public static void merge(int[] arr, int left, int mid, int right) {
