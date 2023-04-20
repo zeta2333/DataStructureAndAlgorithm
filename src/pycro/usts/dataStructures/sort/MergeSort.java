@@ -11,15 +11,17 @@ public class MergeSort {
     public static void mergeSort(int[] arr, int left, int right) {
         if (left >= right) return;
         int mid = left + (right - left) / 2;
+        //先对数组进行拆分
         mergeSort(arr, left, mid);
         mergeSort(arr, mid + 1, right);
+        //拆分完毕后进行合并
         merge(arr, left, right);
     }
 
 
     private static void merge(int[] arr, int left, int right) {
         int mid = left + (right - left) / 2;
-        int[] tmp = new int[right - left + 1];
+        int[] tmp = new int[right - left + 1];//tmp的长度即为当前分组的长度
         int i = left, j = mid + 1, k = 0;//三个指针
 
         //两边填充

@@ -22,9 +22,10 @@ public class QuickSort {
                 arr[j] = temp;
             }
         }
-        //只有当i==j时才会跳出循环
+        //跳出循环，此时i必然等于j
         arr[right] = arr[i];
         arr[i] = pivot;
+        //i的位置归位，之后左右分别递归排序
         quickSort(arr, left, i - 1);
         quickSort(arr, i + 1, right);
     }

@@ -2,8 +2,6 @@ package pycro.usts.dataStructures.sort;
 
 import pycro.usts.dataStructures.uitl.FuncUtil;
 
-import java.util.Arrays;
-
 /**
  * @author Pycro
  * @version 1.0
@@ -11,14 +9,14 @@ import java.util.Arrays;
  */
 public class SortTest {
     public static void main(String[] args) {
-        int len = 79999;
+        int len = 1_0000_000;
         int[] arr = new int[len];
         for (int i = 0; i < len; i++) {
-            arr[i] = (int) (Math.random() * Integer.MAX_VALUE + Integer.MIN_VALUE);
+            arr[i] = (int) (Math.random() * Integer.MAX_VALUE);
             //arr[i] = (int) (Math.random() * 100);
         }
         //int[] arrPrint = {8, 4, 5, 7, 1, 3, 6, 2};
-        int[] arrPrint = {-1,-2};
+        int[] arrPrint = {-1, -2};
         //System.out.println(Arrays.toString(arr));
         //FuncUtil.consumerTimer(Arrays::sort, arr);//执行耗时为:6.970s
         //FuncUtil.consumerTimer(BubbleSort::bubbleSort, arr);
@@ -26,8 +24,9 @@ public class SortTest {
         //FuncUtil.consumerTimer(InsertSort::insertSort, arr);
         //FuncUtil.consumerTimer(ShellSort::shellSort, arr);
         //FuncUtil.consumerTimer(ShellSort::shellSort2, arr);//执行耗时为:24.208s
-        FuncUtil.biConsumerTimer(QuickSort::quickSortTwoArgs, arrPrint, new int[]{0, arrPrint.length - 1});
+        //FuncUtil.biConsumerTimer(QuickSort::quickSortTwoArgs, arr, new int[]{0, arr.length - 1});
         //FuncUtil.biConsumerTimer(MergeSort::mergeSortTwoArgs, arr, new int[]{0, arr.length - 1});
-        System.out.println(Arrays.toString(arrPrint));
+        FuncUtil.consumerTimer(RadixSort::radixSort, arr);
+        //System.out.println(Arrays.toString(arr));
     }
 }
