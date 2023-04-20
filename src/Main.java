@@ -6,14 +6,9 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-        int n = 100;
-        int sum1 = 0;
-        for (int i = 0; i < n; i++) {
-            sum1 += i + 1;
-        }
-        System.out.println(sum1);
-        int sum = (1 + n) * n >> 1;
-        System.out.println(sum);
+        int t = 3;
+        t = ++t + t++;
+        System.out.println(t);
     }
 
     //计算
@@ -48,7 +43,7 @@ public class Main {
 
 class MergeSort {
     public static void main(String[] args) {
-        int[] arr = {1, 0};
+        int[] arr = {1, 0, 8, 4, 5, 2, 6, 3, 7};
         mergeSort(arr, 0, arr.length - 1);
         System.out.println(Arrays.toString(arr)); // 输出：[3, 4, 5, 6, 8]
     }
@@ -83,6 +78,8 @@ class MergeSort {
         int i = left; // 第一个子数组的起始位置
         int j = mid + 1; // 第二个子数组的起始位置
         int k = 0; // 临时数组的下标
+
+        //填充临时数组，使之有序
         while (i <= mid && j <= right) {
             if (arr[i] <= arr[j]) {
                 tmp[k++] = arr[i++];
@@ -90,12 +87,16 @@ class MergeSort {
                 tmp[k++] = arr[j++];
             }
         }
+
+        //当左右两者中有一边遍历结束后，填充另一边剩余的
         while (i <= mid) {
             tmp[k++] = arr[i++];
         }
         while (j <= right) {
             tmp[k++] = arr[j++];
         }
+
+        //将临时数组的值填充回原数组的对应位置
         for (int m = 0; m < tmp.length; m++) {
             arr[left + m] = tmp[m];
         }

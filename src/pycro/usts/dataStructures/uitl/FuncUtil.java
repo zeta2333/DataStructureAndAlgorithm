@@ -24,9 +24,9 @@ public class FuncUtil {
         System.out.printf("执行耗时为:%.3fs\n", (double) (end - start) / 1000);
     }
 
-    public static void mulConsumerTimer(BiConsumer<int[], int[]> bic, int[] arr, int[] arg) {
+    public static void biConsumerTimer(BiConsumer<int[], int[]> bic, int[] arr, int[] args) {
         long start = System.currentTimeMillis();
-        bic.accept(arr, arg);
+        bic.accept(arr, args);
         long end = System.currentTimeMillis();
         System.out.printf("执行耗时为:%.3fs\n", (double) (end - start) / 1000);
     }
