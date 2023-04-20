@@ -5,6 +5,7 @@ package pycro.usts.dataStructures.sort;
  * @version 1.0
  * 2023-04-20 11:36 AM
  */
+@SuppressWarnings("all")
 public class MergeSort {
 
     public static void mergeSort(int[] arr, int left, int right) {

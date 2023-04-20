@@ -5,16 +5,18 @@ package pycro.usts.dataStructures.sort;
  * @version 1.0
  * 2023-04-19 9:46 PM
  */
+@SuppressWarnings("all")
 public class QuickSort {
     public static void quickSort(int[] arr, int left, int right) {
-        if (left > right) return;
+        if (left >= right) return;
+        //取最右侧元素作为支点
         int i = left, j = right, pivot = arr[right];
         while (i < j) {
-            //左侧，依次往右移动
+            //先左侧，依次往右移动
             while (pivot >= arr[i] && i < j) i++;
-            //右侧，依次往左移动
+            //再右侧，依次往左移动
             while (pivot <= arr[j] && j > i) j--;
-            if (i < j) {
+            if (i < j) {//i和j移动到指定位置后，若i仍在j前面，则交换
                 int temp = arr[i];
                 arr[i] = arr[j];
                 arr[j] = temp;
